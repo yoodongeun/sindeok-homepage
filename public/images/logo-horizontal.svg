@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="100%" height="100%">
+  <defs>
+    <linearGradient id="hGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecd5a8"/>
+      <stop offset="35%" stop-color="#d4b47a"/>
+      <stop offset="70%" stop-color="#b69152"/>
+      <stop offset="100%" stop-color="#9a7437"/>
+    </linearGradient>
+    <linearGradient id="hBevelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7a5a2a"/>
+      <stop offset="100%" stop-color="#463111"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(4, 4) scale(0.62)">
+    <!-- 3D Bevels -->
+    <polygon points="56,12 60,15 60,78 56,76" fill="url(#hBevelGrad)"/>
+    <polygon points="18,102 56,76 60,78 22,104" fill="url(#hBevelGrad)"/>
+
+    <polygon points="106,12 110,15 110,78 106,76" fill="url(#hBevelGrad)"/>
+    <polygon points="68,102 106,76 110,78 72,104" fill="url(#hBevelGrad)"/>
+
+    <polygon points="156,12 160,15 160,78 156,76" fill="url(#hBevelGrad)"/>
+    <polygon points="118,102 156,76 160,78 122,104" fill="url(#hBevelGrad)"/>
+
+    <!-- Front Faces -->
+    <polygon points="18,38 56,12 56,76 18,102 18,48 10,45 18,38" fill="url(#hGoldGrad)"/>
+    <polygon points="68,38 106,12 106,76 68,102" fill="url(#hGoldGrad)"/>
+    <polygon points="118,38 156,12 156,76 118,102" fill="url(#hGoldGrad)"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="114" y="44" 
+        font-family="'Pretendard', sans-serif" 
+        font-size="25" 
+        font-weight="900" 
+        letter-spacing="-0.5" 
+        fill="currentColor">신덕종합건설<tspan fill="#f59e0b">.</tspan></text>
+  <text x="115" y="64" 
+        font-family="'Pretendard', 'Montserrat', sans-serif" 
+        font-size="11" 
+        font-weight="800" 
+        letter-spacing="2.8" 
+        fill="#f59e0b">THE BEST ONE</text>
+</svg>
