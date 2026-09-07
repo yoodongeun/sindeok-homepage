@@ -103,12 +103,39 @@ export const PROJECTS_DATA: ProjectItem[] = [
     image: '/images/projects/project-10.jpg',
     tags: ['골드 메탈릭', '사옥 신축', '코너 글라스']
   },
+  {
+    id: 11,
+    title: '모던 투톤 벽돌 다가구 레지던스 (필로티 주차)',
+    category: '주거·주택',
+    location: '수도권 주거단지',
+    description: '클래식한 블랙 브릭과 화이트 브릭의 감각적인 투톤 배색, 지상 1층 필로티 주차 공간을 쾌적하게 확보한 4층 규모 다가구 주택입니다.',
+    image: '/images/projects/project-11.jpg',
+    tags: ['투톤 벽돌', '필로티 주차', '다가구 주택']
+  },
+  {
+    id: 12,
+    title: '자동차 프리미엄 디테일링 전문 상업시설',
+    category: '상업·근생',
+    location: '수도권',
+    description: '차량 진출입에 최적화된 전면 폴딩도어 시스템과 넓은 아스팔트 주차장, 감각적인 모던 외관 디자인을 갖춘 전문 상업시설입니다.',
+    image: '/images/projects/project-12.jpg',
+    tags: ['폴딩도어', '상업시설', '주차장 특화']
+  },
+  {
+    id: 13,
+    title: '첨단 알루미늄 패널 복합 사옥 및 클린 제조시설',
+    category: '산업·사옥',
+    location: '수도권 첨단산업단지',
+    description: '단열성과 내구성이 뛰어난 프리미엄 알루미늄 판넬과 전면 대형 셔터 도어, 블루 틴티드 글라스를 조화롭게 구성한 현대식 복합 사옥입니다.',
+    image: '/images/projects/project-13.jpg',
+    tags: ['알루미늄 판넬', '클린룸 제조', '사옥 신축']
+  },
 ]
 
 export function ProjectsGallery() {
   const [activeCategory, setActiveCategory] = useState<string>('전체')
   const [currentPage, setCurrentPage] = useState<number>(0)
-  const [itemsPerPage, setItemsPerPage] = useState<3 | 4>(3)
+  const [itemsPerPage, setItemsPerPage] = useState<3 | 4>(4)
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null)
 
   const categories = ['전체', '상업·근생', '주거·주택', '산업·사옥', '리모델링']
@@ -165,7 +192,7 @@ export function ProjectsGallery() {
             <span className="text-secondary">작품의 기록.</span>
           </h2>
           <p className="mt-4 max-w-xl text-base text-muted-foreground">
-            정직한 땀방울과 20년 현장 기술력으로 시공한 신덕종합건설의 실제 건축 포트폴리오입니다.
+            정직한 땀방울과 20년 현장 기술력으로 완성한 신덕종합건설의 실제 건축 포트폴리오(총 {PROJECTS_DATA.length}개 실적)입니다.
           </p>
         </div>
 
@@ -257,20 +284,20 @@ export function ProjectsGallery() {
 
                 {/* Bottom Quick Title */}
                 <div className="absolute bottom-3.5 left-3.5 right-3.5 text-white">
-                  <h3 className="text-lg font-bold tracking-tight text-white leading-snug group-hover:text-secondary transition-colors">
+                  <h3 className="text-base font-bold tracking-tight text-white leading-snug group-hover:text-secondary transition-colors line-clamp-2">
                     {project.title}
                   </h3>
                 </div>
               </div>
 
               {/* Card Body */}
-              <div className="p-5 flex-1 flex flex-col justify-between bg-card">
+              <div className="p-4 flex-1 flex flex-col justify-between bg-card">
                 <p className="text-xs leading-relaxed text-muted-foreground line-clamp-2">
                   {project.description}
                 </p>
 
                 {/* Tags & Action */}
-                <div className="mt-4 pt-4 border-t border-border flex items-center justify-between">
+                <div className="mt-3 pt-3 border-t border-border flex items-center justify-between">
                   <div className="flex flex-wrap gap-1">
                     {project.tags.slice(0, 2).map((t) => (
                       <span key={t} className="text-[10px] font-semibold text-slate-700 bg-slate-100 px-2 py-0.5">
@@ -278,8 +305,8 @@ export function ProjectsGallery() {
                       </span>
                     ))}
                   </div>
-                  <span className="text-xs font-bold text-secondary flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    사진 크게보기 ↗
+                  <span className="text-[11px] font-bold text-secondary flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                    크게보기 ↗
                   </span>
                 </div>
               </div>
@@ -294,7 +321,7 @@ export function ProjectsGallery() {
               <span className="text-xs font-bold tracking-widest text-muted-foreground">
                 PAGE <strong className="text-primary font-black text-sm">0{currentPage + 1}</strong> / 0{totalPages}
               </span>
-              <span className="text-xs text-muted-foreground/60">· 전체 {filteredProjects.length}개 실적</span>
+              <span className="text-xs text-muted-foreground/60">· {filteredProjects.length}개 실적 중 표시</span>
             </div>
 
             {/* Pagination Buttons */}
