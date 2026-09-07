@@ -5,7 +5,7 @@ import { useState } from 'react'
 export interface ProjectItem {
   id: number
   title: string
-  category: '상업·근생' | '주거·주택' | '산업·사옥' | '리모델링'
+  category: '교육·공공' | '산업·사옥' | '상업·근생' | '주거·주택'
   location: string
   description: string
   image: string
@@ -13,44 +13,59 @@ export interface ProjectItem {
 }
 
 export const PROJECTS_DATA: ProjectItem[] = [
+  // 1. 대형 교육시설 신축 (화려한 랜드마크 프로젝트 1위)
   {
     id: 1,
-    title: '가현리 모던 징크 파사드 근생시설',
-    category: '상업·근생',
-    location: '경기 김포시 가현리',
-    description: '고급 다크 징크 판넬 외장과 전면 와이드 통창 글라스, 천연 방부목 데크 테라스를 적용한 세련된 모던 근린생활시설입니다.',
-    image: '/images/projects/project-01.jpg',
-    tags: ['징크 판넬', '전면 통창', '데크 테라스']
+    title: '초·중등 교육시설 및 미래형 복합 학교 신축 공사',
+    category: '교육·공공',
+    location: '수도권 교육지구',
+    description: '학생들의 안전과 쾌적한 학습 환경을 최우선으로 시공한 대규모 학교 신축 프로젝트입니다. 견고한 친환경 외장과 컬러풀 캐노피 파사드를 완공했습니다.',
+    image: '/images/projects/project-06.jpg',
+    tags: ['학교 신축', '교육시설', '친환경 시공', '대형 프로젝트']
   },
+  // 2. 대형 물류/산업 복합 사옥
   {
     id: 2,
-    title: '친환경 모던 전원주택 및 휴게 공간',
-    category: '주거·주택',
-    location: '경기 김포시',
-    description: '자연 친화적 목재 패턴 외장재와 넓은 잔디마당이 조화를 이루는 안락하고 따뜻한 전원 단독주택입니다.',
-    image: '/images/projects/project-02.jpg',
-    tags: ['전원주택', '목재 패턴', '친환경 설계']
+    title: '대형 물류·산업 클러스터 및 글라스 복합 사옥 신축',
+    category: '산업·사옥',
+    location: '수도권 산업단지',
+    description: '대규모 물류 제조동과 블루 반사유리 커튼월을 적용한 4층 규모 첨단 비즈니스 복합 사옥을 정밀 시공했습니다.',
+    image: '/images/projects/project-07.jpg',
+    tags: ['대형 산업단지', '커튼월 글라스', '복합 사옥']
   },
+  // 3. 도심형 4층 상가 타워
   {
     id: 3,
-    title: '2층 모던 글라스 테라스 빌라',
-    category: '주거·주택',
-    location: '수도권',
-    description: '화이트 & 차콜 투톤 메탈 외장과 2층 개방형 글라스 테라스를 시공하여 채광과 공간감을 극대화한 주거 시설입니다.',
-    image: '/images/projects/project-03.jpg',
-    tags: ['복층 주거', '글라스 테라스', '투톤 마감']
+    title: '도심형 4층 모던 상업타워 및 사옥 빌딩',
+    category: '상업·근생',
+    location: '도심 상업지구',
+    description: '투톤 알루미늄 패널과 버티컬 글라스 타워를 결합하여 도심 코너에 랜드마크로 우뚝 선 세련된 4층 규모 상업 타워입니다.',
+    image: '/images/projects/project-08.jpg',
+    tags: ['4층 상가타워', '알루미늄 패널', '도심 랜드마크']
   },
+  // 4. 골드 브론즈 복합 사옥
   {
     id: 4,
-    title: '프리미엄 다층 모던 레지던스 (빌트인 차고)',
-    category: '주거·주택',
-    location: '수도권 주택단지',
-    description: '천연 석재 기단부와 와이드 유리 난간, 오버헤드 셔터가 완비된 실내 주차장을 갖춘 최고급 하이엔드 주택입니다.',
-    image: '/images/projects/project-04.jpg',
-    tags: ['빌트인 차고', '석재 마감', '와이드 발코니']
+    title: '골드 브론즈 메탈릭 패널 복합 사옥 및 제조 콤플렉스',
+    category: '산업·사옥',
+    location: '수도권 비즈니스 파크',
+    description: '품격 있는 골드 브론즈 메탈릭 판넬과 코너 글라스 큐브를 매치하여 제조 효율성과 기업 브랜드 가치를 동시에 높인 복합 사옥입니다.',
+    image: '/images/projects/project-10.jpg',
+    tags: ['골드 메탈릭', '사옥 신축', '코너 글라스']
   },
+  // 5. 첨단 알루미늄 사옥
   {
     id: 5,
+    title: '첨단 알루미늄 패널 복합 사옥 및 클린 제조시설',
+    category: '산업·사옥',
+    location: '수도권 첨단산업단지',
+    description: '단열성과 내구성이 뛰어난 프리미엄 알루미늄 판넬과 대형 셔터 도어, 블루 틴티드 글라스를 조화롭게 구성한 현대식 복합 사옥입니다.',
+    image: '/images/projects/project-13.jpg',
+    tags: ['알루미늄 판넬', '클린룸 제조', '사옥 신축']
+  },
+  // 6. 필로티 구조 사옥
+  {
+    id: 6,
     title: '필로티 구조 복합 레지던스 및 사옥',
     category: '산업·사옥',
     location: '수도권',
@@ -58,33 +73,27 @@ export const PROJECTS_DATA: ProjectItem[] = [
     image: '/images/projects/project-05.jpg',
     tags: ['필로티 구조', '주차 특화', '석재 파사드']
   },
-  {
-    id: 6,
-    title: '교육시설 외벽 리모델링 및 캐노피 파사드',
-    category: '리모델링',
-    location: '수도권',
-    description: '노후된 외벽을 모던 알루미늄 복합판넬과 컬러풀한 캐노피 디자인으로 전면 리모델링하여 안전성과 도시 미관을 획기적으로 개선했습니다.',
-    image: '/images/projects/project-06.jpg',
-    tags: ['외벽 리모델링', '복합판넬', '캐노피 시공']
-  },
+  // 7. 프리미엄 다층 주택
   {
     id: 7,
-    title: '대형 물류·산업시설 및 글라스 복합 사무동',
-    category: '산업·사옥',
-    location: '수도권 산업단지',
-    description: '대형 물류 제조동과 블루 반사유리 커튼월을 적용한 4층 규모의 첨단 비즈니스 복합 사무동을 정밀 시공했습니다.',
-    image: '/images/projects/project-07.jpg',
-    tags: ['산업시설', '커튼월 글라스', '대형 공장']
+    title: '프리미엄 다층 모던 레지던스 (빌트인 실내 차고)',
+    category: '주거·주택',
+    location: '수도권 고급주택단지',
+    description: '천연 석재 기단부와 와이드 유리 난간, 오버헤드 셔터가 완비된 실내 빌트인 주차장을 갖춘 최고급 하이엔드 주택입니다.',
+    image: '/images/projects/project-04.jpg',
+    tags: ['빌트인 차고', '석재 마감', '와이드 발코니']
   },
+  // 8. 4층 투톤 벽돌 다가구
   {
     id: 8,
-    title: '도심형 4층 모던 상가 및 사옥 타워',
-    category: '상업·근생',
-    location: '도심 상업지구',
-    description: '투톤 알루미늄 패널과 버티컬 글라스 타워를 결합하여 도심 코너에 랜드마크로 우뚝 선 세련된 4층 상가 건물입니다.',
-    image: '/images/projects/project-08.jpg',
-    tags: ['4층 상가', '알루미늄 패널', '타워 글라스']
+    title: '모던 투톤 벽돌 다가구 레지던스 (필로티 주차)',
+    category: '주거·주택',
+    location: '수도권 주거단지',
+    description: '클래식한 블랙 브릭과 화이트 브릭의 감각적인 투톤 배색, 지상 1층 필로티 주차 공간을 완비한 4층 규모 다가구 주택입니다.',
+    image: '/images/projects/project-11.jpg',
+    tags: ['투톤 벽돌', '필로티 주차', '다가구 주택']
   },
+  // 9. 대형 F&B 상가 (북극해 고등어)
   {
     id: 9,
     title: '북극해 고등어 부천작동점 상업시설 신축',
@@ -94,51 +103,55 @@ export const PROJECTS_DATA: ProjectItem[] = [
     image: '/images/projects/project-09.jpg',
     tags: ['프랜차이즈 상가', '주차장 완비', '파노라마 통창']
   },
+  // 10. 자동차 디테일링 상업시설
   {
     id: 10,
-    title: '골드 브론즈 메탈릭 패널 복합 사옥 및 제조동',
-    category: '산업·사옥',
-    location: '수도권',
-    description: '품격 있는 골드 브론즈 메탈릭 판넬과 코너 글라스 큐브를 매치하여 제조 효율성과 기업 브랜드 가치를 동시에 높인 복합 시설입니다.',
-    image: '/images/projects/project-10.jpg',
-    tags: ['골드 메탈릭', '사옥 신축', '코너 글라스']
-  },
-  {
-    id: 11,
-    title: '모던 투톤 벽돌 다가구 레지던스 (필로티 주차)',
-    category: '주거·주택',
-    location: '수도권 주거단지',
-    description: '클래식한 블랙 브릭과 화이트 브릭의 감각적인 투톤 배색, 지상 1층 필로티 주차 공간을 쾌적하게 확보한 4층 규모 다가구 주택입니다.',
-    image: '/images/projects/project-11.jpg',
-    tags: ['투톤 벽돌', '필로티 주차', '다가구 주택']
-  },
-  {
-    id: 12,
-    title: '자동차 프리미엄 디테일링 전문 상업시설',
+    title: '자동차 프리미엄 디테일링 전문 상업시설 (Detailer 明)',
     category: '상업·근생',
     location: '수도권',
-    description: '차량 진출입에 최적화된 전면 폴딩도어 시스템과 넓은 아스팔트 주차장, 감각적인 모던 외관 디자인을 갖춘 전문 상업시설입니다.',
+    description: '차량 진출입에 최적화된 전면 폴딩도어 시스템과 넓은 아스팔트 전면 주차장, 감각적인 모던 외관 디자인을 갖춘 전문 상업시설입니다.',
     image: '/images/projects/project-12.jpg',
     tags: ['폴딩도어', '상업시설', '주차장 특화']
   },
+  // 11. (구 1페이지 -> 맨 끝 배치) 2층 모던 글라스 테라스 빌라
+  {
+    id: 11,
+    title: '2층 모던 글라스 테라스 주거 빌라',
+    category: '주거·주택',
+    location: '수도권',
+    description: '화이트 & 차콜 투톤 메탈 외장과 2층 개방형 글라스 테라스를 시공하여 채광과 공간감을 극대화한 주거 시설입니다.',
+    image: '/images/projects/project-03.jpg',
+    tags: ['복층 주거', '글라스 테라스', '투톤 마감']
+  },
+  // 12. (구 1페이지 -> 맨 끝 배치) 가현리 모던 징크 근생
+  {
+    id: 12,
+    title: '가현리 모던 징크 파사드 근린생활시설',
+    category: '상업·근생',
+    location: '경기 김포시 가현리',
+    description: '고급 다크 징크 판넬 외장과 전면 와이드 통창 글라스, 천연 방부목 데크 테라스를 적용한 세련된 모던 근린생활시설입니다.',
+    image: '/images/projects/project-01.jpg',
+    tags: ['징크 판넬', '전면 통창', '데크 테라스']
+  },
+  // 13. (구 1페이지 -> 맨 끝 배치) 친환경 모던 전원주택
   {
     id: 13,
-    title: '첨단 알루미늄 패널 복합 사옥 및 클린 제조시설',
-    category: '산업·사옥',
-    location: '수도권 첨단산업단지',
-    description: '단열성과 내구성이 뛰어난 프리미엄 알루미늄 판넬과 전면 대형 셔터 도어, 블루 틴티드 글라스를 조화롭게 구성한 현대식 복합 사옥입니다.',
-    image: '/images/projects/project-13.jpg',
-    tags: ['알루미늄 판넬', '클린룸 제조', '사옥 신축']
+    title: '친환경 모던 전원주택 및 휴게 공간',
+    category: '주거·주택',
+    location: '경기 김포시',
+    description: '자연 친화적 목재 패턴 외장재와 넓은 잔디마당이 조화를 이루는 안락하고 따뜻한 전원 단독주택입니다.',
+    image: '/images/projects/project-02.jpg',
+    tags: ['전원주택', '목재 패턴', '친환경 설계']
   },
 ]
 
 export function ProjectsGallery() {
   const [activeCategory, setActiveCategory] = useState<string>('전체')
   const [currentPage, setCurrentPage] = useState<number>(0)
-  const [itemsPerPage, setItemsPerPage] = useState<3 | 4>(4)
+  const [itemsPerPage, setItemsPerPage] = useState<3 | 4>(3)
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null)
 
-  const categories = ['전체', '상업·근생', '주거·주택', '산업·사옥', '리모델링']
+  const categories = ['전체', '교육·공공', '산업·사옥', '상업·근생', '주거·주택']
 
   const filteredProjects = activeCategory === '전체'
     ? PROJECTS_DATA
@@ -185,14 +198,14 @@ export function ProjectsGallery() {
         <div>
           <div className="flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-secondary animate-pulse" />
-            <p className="section-kicker !mb-0">FEATURED PROJECTS · 실제 시공 실적</p>
+            <p className="section-kicker !mb-0">FEATURED PROJECTS · 대표 시공 실적</p>
           </div>
           <h2 className="section-title mt-2">
             신덕이 완성한<br />
             <span className="text-secondary">작품의 기록.</span>
           </h2>
           <p className="mt-4 max-w-xl text-base text-muted-foreground">
-            정직한 땀방울과 20년 현장 기술력으로 완성한 신덕종합건설의 실제 건축 포트폴리오(총 {PROJECTS_DATA.length}개 실적)입니다.
+            학교 신축, 대형 산업·물류 복합사옥, 도심 랜드마크 타워 등 신덕종합건설의 주요 건축 실적(총 {PROJECTS_DATA.length}개)입니다.
           </p>
         </div>
 
