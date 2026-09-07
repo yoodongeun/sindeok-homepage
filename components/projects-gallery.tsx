@@ -145,10 +145,11 @@ export const PROJECTS_DATA: ProjectItem[] = [
   },
 ]
 
+const ITEMS_PER_PAGE = 3
+
 export function ProjectsGallery() {
   const [activeCategory, setActiveCategory] = useState<string>('전체')
   const [currentPage, setCurrentPage] = useState<number>(0)
-  const [itemsPerPage, setItemsPerPage] = useState<3 | 4>(3)
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null)
 
   const categories = ['전체', '교육·공공', '산업·사옥', '상업·근생', '주거·주택']
@@ -157,10 +158,10 @@ export function ProjectsGallery() {
     ? PROJECTS_DATA
     : PROJECTS_DATA.filter((p) => p.category === activeCategory)
 
-  const totalPages = Math.ceil(filteredProjects.length / itemsPerPage) || 1
+  const totalPages = Math.ceil(filteredProjects.length / ITEMS_PER_PAGE) || 1
   const currentProjects = filteredProjects.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
+    currentPage * ITEMS_PER_PAGE,
+    (currentPage + 1) * ITEMS_PER_PAGE
   )
 
   const handlePrev = () => {
@@ -209,66 +210,32 @@ export function ProjectsGallery() {
           </p>
         </div>
 
-        {/* View Options & Categories */}
-        <div className="flex flex-col items-start md:items-end gap-3">
-          {/* 3개씩 / 4개씩 보기 토글 */}
-          <div className="flex items-center gap-1.5 bg-muted p-1 rounded-md text-xs font-semibold">
-            <span className="px-2 text-muted-foreground">한 화면에:</span>
-            <button
-              onClick={() => { setItemsPerPage(3); setCurrentPage(0); }}
-              className={`px-3 py-1 rounded transition ${
-                itemsPerPage === 3
-                  ? 'bg-card text-primary font-bold shadow-xs'
-                  : 'text-muted-foreground hover:text-primary'
-              }`}
-            >
-              3개씩 보기
-            </button>
-            <button
-              onClick={() => { setItemsPerPage(4); setCurrentPage(0); }}
-              className={`px-3 py-1 rounded transition ${
-                itemsPerPage === 4
-                  ? 'bg-card text-primary font-bold shadow-xs'
-                  : 'text-muted-foreground hover:text-primary'
-              }`}
-            >
-              4개씩 보기
-            </button>
-          </div>
-
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap gap-1.5">
-            {categories.map((cat) => {
-              const count = cat === '전체'
-                ? PROJECTS_DATA.length
-                : PROJECTS_DATA.filter(p => p.category === cat).length
-              return (
-                <button
-                  key={cat}
-                  onClick={() => handleCategoryChange(cat)}
-                  className={`px-3 py-1.5 text-xs font-bold transition rounded-md ${
-                    activeCategory === cat
-                      ? 'bg-primary text-white shadow-sm'
-                      : 'bg-muted text-muted-foreground hover:text-primary hover:bg-muted/80'
-                  }`}
-                >
-                  {cat} <span className="text-[10px] opacity-75">({count})</span>
-                </button>
-              )
-            })}
-          </div>
+        {/* Category Filter Pills */}
+        <div className="flex flex-wrap gap-1.5 md:justify-end">
+          {categories.map((cat) => {
+            const count = cat === '전체'
+              ? PROJECTS_DATA.length
+              : PROJECTS_DATA.filter(p => p.category === cat).length
+            return (
+              <button
+                key={cat}
+                onClick={() => handleCategoryChange(cat)}
+                className={`px-3 py-1.5 text-xs font-bold transition rounded-md ${
+                  activeCategory === cat
+                    ? 'bg-primary text-white shadow-sm'
+                    : 'bg-muted text-muted-foreground hover:text-primary hover:bg-muted/80'
+                }`}
+              >
+                {cat} <span className="text-[10px] opacity-75">({count})</span>
+              </button>
+            )
+          })}
         </div>
       </div>
 
-      {/* Projects Grid Container (Dynamic 3 or 4 columns) */}
+      {/* Projects Grid Container (Fixed 3 items per view) */}
       <div className="relative">
-        <div
-          className={`grid gap-6 ${
-            itemsPerPage === 4
-              ? 'sm:grid-cols-2 lg:grid-cols-4'
-              : 'sm:grid-cols-2 lg:grid-cols-3'
-          }`}
-        >
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {currentProjects.map((project) => (
             <article
               key={project.id}
