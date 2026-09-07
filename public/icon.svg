@@ -1,29 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
   <defs>
-    <linearGradient id="favGold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ecd5a8"/>
-      <stop offset="40%" stop-color="#d4b47a"/>
-      <stop offset="80%" stop-color="#b69152"/>
-      <stop offset="100%" stop-color="#9a7437"/>
-    </linearGradient>
-    <linearGradient id="favBevel" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#7a5a2a"/>
-      <stop offset="100%" stop-color="#463111"/>
+    <linearGradient id="favGoldM" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dfb958"/>
+      <stop offset="50%" stop-color="#ba9138"/>
+      <stop offset="100%" stop-color="#9a7424"/>
     </linearGradient>
   </defs>
   <rect width="180" height="180" rx="36" fill="#10263f"/>
-  <g transform="translate(16, 32) scale(0.92)">
-    <polygon points="56,12 60,15 60,78 56,76" fill="url(#favBevel)"/>
-    <polygon points="18,102 56,76 60,78 22,104" fill="url(#favBevel)"/>
-
-    <polygon points="106,12 110,15 110,78 106,76" fill="url(#favBevel)"/>
-    <polygon points="68,102 106,76 110,78 72,104" fill="url(#favBevel)"/>
-
-    <polygon points="156,12 160,15 160,78 156,76" fill="url(#favBevel)"/>
-    <polygon points="118,102 156,76 160,78 122,104" fill="url(#favBevel)"/>
-
-    <polygon points="18,38 56,12 56,76 18,102 18,48 10,45 18,38" fill="url(#favGold)"/>
-    <polygon points="68,38 106,12 106,76 68,102" fill="url(#favGold)"/>
-    <polygon points="118,38 156,12 156,76 118,102" fill="url(#favGold)"/>
+  <g transform="translate(18, 16) scale(0.82)">
+    <polygon points="36,56 98,16 98,140 54,180 54,64 36,56" fill="url(#favGoldM)"/>
+    <polygon points="106,64 150,16 150,140 106,180" fill="url(#favGoldM)"/>
+    <polygon points="158,64 202,16 202,140 158,180" fill="url(#favGoldM)"/>
   </g>
 </svg>
